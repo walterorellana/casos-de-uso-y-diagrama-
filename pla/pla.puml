@@ -1,0 +1,60 @@
+@startuml usecase
+
+left to right direction
+actor gerente
+rectangle "Registrar un nuevo empleado" {
+    gerente --> (nuevo empleado)
+    gerente --> (como su nombre)
+    gerente --> (apellido)
+    gerente --> (fecha de nacimiento)
+    gerente --> (número de identificación)
+    gerente --> (puesto)
+    gerente --> (salario) 
+    gerente --> (fecha de ingresoo)
+}
+
+actor usuario_autorizado 
+rectangle "Modificar información de un empleado" {
+   usuario_autorizado-->(empleado existente)
+   usuario_autorizado-->(salario_n)
+   usuario_autorizado-->(número de identificación_n)
+   usuario_autorizado-->(puesto_n)
+   usuario_autorizado-->(fecha de ingreso)
+
+}
+
+actor gerente_autorizado
+rectangle "Eliminar un empleado" {
+   gerente_autorizado-->(id_empleado)
+   gerente_autorizado-->(delet_usuario)
+   gerente_autorizado-->(comfirmar)
+
+}
+
+actor usuario 
+rectangle "Buscar empleados" {
+    usuario-->(nombre-)
+    usuario-->(apellido-)
+    usuario-->(puesto-)
+    usuario-->(fecha-)
+}
+
+actor rrhh 
+rectangle "Listar empleados" {
+    rrhh-->(nombre.)
+    rrhh-->(apellido-)
+    rrhh-->(puesto.)
+    rrhh-->(fecha.)
+}
+
+actor gerente_recursos 
+rectangle "Generar reporte por fecha" {
+    gerente_recursos-->(fecha de ingreso al sistema.)
+}
+
+actor gerente_recursos_2
+rectangle "Generar reporte por puesto" {
+    gerente_recursos_2-->(puesto en el sistema.)
+}
+
+@enduml
